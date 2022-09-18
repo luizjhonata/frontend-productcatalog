@@ -9,6 +9,13 @@
 
 body,
 html {
-  background-color: #000;
+  background-color: #fff;
   color: #fff;
+}
+
+a,
+a:hover,
+a:visited {
+  color: unset;
+  text-decoration: none;
 }

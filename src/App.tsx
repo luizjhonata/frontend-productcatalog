@@ -1,6 +1,11 @@
+import LoginPage from "./components/LoginPage"
+import ProductPage from "./components/ProductPage"
+import Header from "./components/Header"
+
+
 function App() {
   return (
-  <h1>LET'S GO!</h1>
+    <ProductPage/>
   )
 }
 

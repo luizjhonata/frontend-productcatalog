@@ -1,0 +1,28 @@
+header {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-logo-container img{
+    width: 50px;
+}
+
+.header-logo-container h1 {
+    color: #000;
+    margin-top: 15px;
+    font-size: 24px;
+  }
+  
+  .header-logo-container p {
+    color: #000;
+    font-size: 14px;
+    font-weight: 300;
+  }
