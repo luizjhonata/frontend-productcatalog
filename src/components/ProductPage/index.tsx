@@ -18,8 +18,8 @@ function ProductPage() {
                 <table className='product-table'>
                     <thead>
                         <tr>
-                            <th className='show580'>Id</th>
-                            <th className='show580'>Cod</th>
+                            <th className='show510'>Id</th>
+                            <th className='show510'>Cod</th>
                             <th>Description</th>
                             <th className='show850'>Weight</th>
                             <th>Price</th>
@@ -29,8 +29,8 @@ function ProductPage() {
                     </thead>
                     <tbody>
                         <tr>
-                            <td className='show580'>1</td>
-                            <td className='show580'>C11JGSDN80</td>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
@@ -38,8 +38,8 @@ function ProductPage() {
                             <td><img src={edit} alt="Editar Produto" /></td>
                         </tr>
                         <tr>
-                            <td className='show580'>1</td>
-                            <td className='show580'>C11JGSDN80</td>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
@@ -47,8 +47,35 @@ function ProductPage() {
                             <td><img src={edit} alt="Editar Produto" /></td>
                         </tr>
                         <tr>
-                            <td className='show580'>1</td>
-                            <td className='show580'>C11JGSDN80</td>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
+                            <td>CURVA 11º BOLSA DN80</td>
+                            <td className='show850'>16</td>
+                            <td>R$ 200.02</td>
+                            <td><img src={details} alt="Ver Detalhes" /></td>
+                            <td><img src={edit} alt="Editar Produto" /></td>
+                        </tr>
+                        <tr>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
+                            <td>CURVA 11º BOLSA DN80</td>
+                            <td className='show850'>16</td>
+                            <td>R$ 200.02</td>
+                            <td><img src={details} alt="Ver Detalhes" /></td>
+                            <td><img src={edit} alt="Editar Produto" /></td>
+                        </tr>
+                        <tr>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
+                            <td>CURVA 11º BOLSA DN80</td>
+                            <td className='show850'>16</td>
+                            <td>R$ 200.02</td>
+                            <td><img src={details} alt="Ver Detalhes" /></td>
+                            <td><img src={edit} alt="Editar Produto" /></td>
+                        </tr>
+                        <tr>
+                            <td className='show510'>1</td>
+                            <td className='show510'>C11JGSDN80</td>
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
