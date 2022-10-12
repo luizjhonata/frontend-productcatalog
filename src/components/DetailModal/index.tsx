@@ -6,19 +6,16 @@ import modalImg from '../../assets/curva11.png';
 
 const customStyles = {
     content: {
-        top: '20%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        width: 'auto',
+        margin: '50px 11px 50px 11px',
+        paddingTop: '20px',
+        height: 'fit-content',
+        inset: 'inherit',
     },
 };
 
 Modal.setAppElement('#root')
 
-function ImageModal() {
+function DetailModal() {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -36,15 +33,16 @@ function ImageModal() {
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-                style={customStyles}
+            style={customStyles}
             >
-                <button className='close-button' onClick={closeModal}>X</button>
-                <img className='img-detail' src={modalImg} alt="Detalhamento Produto" />
-
+                <div className='container-modal'>
+                    <button className='close-button' onClick={closeModal}>X</button>
+                    <img className='img-detail' src={modalImg} alt="Detalhamento Produto" />
+                </div>
 
             </Modal>
         </div>
     )
 }
 
-export default ImageModal
+export default DetailModal

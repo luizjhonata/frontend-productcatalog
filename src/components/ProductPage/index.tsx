@@ -1,8 +1,9 @@
-import React from 'react'
-import './styles.css'
+import React from 'react';
+import './styles.css';
 import search from '../../assets/search.svg';
 import edit from '../../assets/edit.svg';
-import details from '../../assets/details.svg';
+import DetailModal from '../DetailModal';
+import EditModal from '../EditModal';
 
 function ProductPage() {
     return (
@@ -34,8 +35,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                         <tr>
                             <td className='show510'>1</td>
@@ -43,8 +44,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                         <tr>
                             <td className='show510'>1</td>
@@ -52,8 +53,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                         <tr>
                             <td className='show510'>1</td>
@@ -61,8 +62,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                         <tr>
                             <td className='show510'>1</td>
@@ -70,8 +71,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                         <tr>
                             <td className='show510'>1</td>
@@ -79,8 +80,8 @@ function ProductPage() {
                             <td>CURVA 11º BOLSA DN80</td>
                             <td className='show850'>16</td>
                             <td>R$ 200.02</td>
-                            <td><img src={details} alt="Ver Detalhes" /></td>
-                            <td><img src={edit} alt="Editar Produto" /></td>
+                            <td><DetailModal/></td>
+                            <td><EditModal/></td>
                         </tr>
                     </tbody>
                 </table>
