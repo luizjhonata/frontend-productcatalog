@@ -45,7 +45,7 @@ function EditUserModal() {
                         </div>
                         <div className='field-modal'>
                             <h2>USERNAME: </h2>
-                            <input type="text" placeholder='CURVA 11º BOLSA DN80' />
+                            <input type="text" placeholder='luizjhonata' />
                         </div>
                         <div className='field-modal'>
                             <h2>PASSWORD:</h2>
@@ -53,7 +53,9 @@ function EditUserModal() {
                         </div>
                         <div className='field-modal'>
                             <h2>ADMIN:</h2>
-                            <input type="text" placeholder='200' />
+                            <div>
+                                <input type="checkbox" checked />
+                            </div>
                         </div>
                         <div className='container-save-button'>
                             <button className='save-button'> Salvar Alterações </button>
@@ -61,8 +63,8 @@ function EditUserModal() {
                     </div>
                 </div>
 
-            </Modal>
-        </div>
+            </Modal >
+        </div >
     )
 }
 

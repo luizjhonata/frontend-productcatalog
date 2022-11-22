@@ -75,3 +75,9 @@
     }
 
 }
+
+.admin-input {
+    display: flex;
+    justify-content: start;
+
+}
