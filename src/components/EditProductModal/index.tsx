@@ -2,7 +2,6 @@ import React from 'react';
 import edit from '../../assets/edit.svg';
 import Modal from 'react-modal';
 import './styles.css';
-import modalImg from '../../assets/curva11.png';
 
 const customStyles = {
     content: {
@@ -15,7 +14,7 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-function EditModal() {
+function EditProductModal() {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -42,7 +41,7 @@ function EditModal() {
                         </div>
                         <div className='field-modal'>
                             <h2>COD:</h2>
-                            <input type="text" placeholder='C11JGSDN80' />
+                            <input type="text" value="C11JGSDN80" />
                         </div>
                         <div className='field-modal'>
                             <h2>DESCRIPTION: </h2>
@@ -67,4 +66,4 @@ function EditModal() {
     )
 }
 
-export default EditModal
+export default EditProductModal

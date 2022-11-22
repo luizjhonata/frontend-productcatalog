@@ -22,8 +22,10 @@
     width: 100%;
 }
 
-.container-modal h2, input {
-    font-size: 16px;
+.container-modal h2, input, .save-button {
+    font-size: 11px;
+    align-items: center;
+    display: flex;
 }
 
 .container-modal input {
@@ -31,6 +33,7 @@
     width: 100%;
     border-color: rgb(233, 233, 233);
     background-color: rgb(230, 227, 227);
+    padding: 8px;
 }
 
 .field-modal {
@@ -49,6 +52,26 @@
     font-weight: bold;
     cursor: pointer;
     padding: 3px;
-    font-size: 15px;
+    border-radius: 5px;
+    border:rgb(112, 112, 112);
+    box-shadow: 2px 2px 0 2px #c0c1c2;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
+.save-button:active {
+    box-shadow: 0 0 0 0 rgb(112, 112, 112), inset 1px 1px 0 2px rgb(112, 112, 112);
+    transform: translate(2px, 2px);
+}
+
+@media (min-width: 510px) {
+    .container-modal h2, input, .save-button {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 670px) { 
+    .container-modal h2, input, .save-button {
+        font-size: 16px;
+    }
+
+}

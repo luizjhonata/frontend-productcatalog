@@ -2,47 +2,52 @@ h1 {
     color: #000;
 }
 
-.product-card {
-    padding: 20px 10px;
+.user-admin input{
+    display: table-cell;
+}
+
+.user-card {
+    padding: 10px 20px 10px;
     border-bottom: 1px solid #000;
 }
 
-.product-title {
+.user-title {
     color: #0078F0;
     font-size: 24px;
     margin-bottom: 20px;
 }
 
-.product-table {
+.user-table {
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
+
 }
 
-.product-table thead {
+.user-table thead {
     height: 55px;
     font-size: 12px;
     color: #000000;
     font-weight: 700;
 }
 
-.product-table tbody {
+.user-table tbody {
     font-size: 11px;
     font-weight: 400;
     color: #000000;
     text-align: center;
 }
 
-.product-table tbody tr {
+.user-table tbody tr {
     height: 55px;
     border-top: 1px solid #e0e0e0;
 }
 
-.product-table tbody tr:hover>td {
+.user-table tbody tr:hover>td {
     background-color: #d1d1d1;
 }
 
-.product-table tbody tr:nth-child(odd) {
+.user-table tbody tr:nth-child(odd) {
     background-color: #e0e0e0;
 }
 
@@ -54,111 +59,99 @@ h1 {
     display: none;
 }
 
-.product-search-container {
+.user-search-container {
     display: flex;
     align-items: center;
     justify-content: flex-start;
 }
 
-/* .product-search-container img {
+.user-search-container img{
+    margin-left: 10px;
     cursor: pointer;
-} */
+}
 
-.product-search-container input {
+.user-search-container input{
     width: 280px;
     height: 45px;
     padding-left: 4px;
     border-radius: 10px;
     border-color: #d1d1d1;
-    margin-right: 10px;
 }
 
-.product-table img {
+.user-table img {
     cursor: pointer;
     width: 13px;
 }
+input {
+    width: 10px;
+    height: 10px;
+}
 
 @media (min-width: 510px) {
+
     .show510 {
         display: table-cell;
     }
 
-    .product-title {
+    .user-title {
         font-size: 28px;
     }
 
-    .product-card {
+    .user-card {
         padding: 35px;
     }
 
-    .product-table thead {
+    .user-table thead {
         font-size: 14px;
     }
 
-    .product-card tbody tr {
+    .user-card tbody tr {
         height: 55px;
     }
 
-    .product-card tbody {
+    .user-card tbody {
         font-size: 13px;
+    }
+
+    input {
+        width: 12px;
+        height: 12px;
     }
 }
 
 @media (min-width: 670px) {
-
-
-    .product-title {
+    input {
+        width: 16px;
+        height: 16px;
+    }
+    .user-title {
         font-size: 30px;
     }
 
-    .product-card {
+    .user-card {
         padding: 35px;
     }
 
-    .product-table thead {
+    .user-table thead {
         font-size: 16px;
     }
 
-    .product-card tbody tr {
+    .user-card tbody tr {
         height: 55px;
     }
 
-    .product-card tbody {
+    .user-card tbody {
         font-size: 18px;
     }
 
-    .product-table img {
+    .user-table img {
         width: 18px;
     }
+
 }
 
 @media (min-width: 850px) {
-    .show850 {
-        display: table-cell;
-    }
-
-    .product-title {
+    .user-title {
         font-size: 36px;
     }
-}
-
-.search-button {
-    cursor: pointer;
-    background-color: transparent;
-    border: transparent;
-    border-radius: 15px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-
-}
-
-.save-button {
-    font-weight: bold;
-    border:rgb(112, 112, 112);
-    box-shadow: 2px 2px 0 2px #c0c1c2;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-
-.search-button:active {
-    box-shadow: 0 0 0 0 rgb(112, 112, 112), inset 1px 1px 2px 2px #0078F0;
-    transform: translate(2px, 2px);
 }
