@@ -98,13 +98,13 @@ input {
     border-left: transparent;
     border-right: transparent;
     border-bottom: 1px solid #000;
-    padding-top: 10px;
 }
 
 .userform input {
     width: 280px;
     padding-bottom: 2px;
     font-size: 11px;
+    padding: 5px;
 }
 
 @media (min-width: 576px) {
@@ -129,6 +129,7 @@ input {
     width: 280px;
     padding-bottom: 2px;
     font-size: 11px;
+    padding: 5px;
 }
 
 @media (min-width: 576px) {

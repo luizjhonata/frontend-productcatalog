@@ -10,11 +10,11 @@ import Tabnav from "./components/Tabnav"
 function App() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       {/* <UserPage/> */}
-      {/* <LoginPage/> */}
+      <LoginPage/>
       {/* <ProductPage/> */}
-      <Tabnav/>
+      {/* <Tabnav/> */}
       {/* <ImageModal/> */}
     </>
   )

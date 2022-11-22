@@ -28,7 +28,7 @@ function LoginPage() {
                         </div>
                         <div className='passwordform'>
                             <h2>Senha</h2>
-                            <input type="text" placeholder="Digite a senha" />
+                            <input type="password" placeholder="Digite a senha" />
                         </div>
                     </div>
                     <div className='btn-container'>
