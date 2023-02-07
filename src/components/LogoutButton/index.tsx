@@ -4,15 +4,15 @@ import './styles.css';
 
 function LogoutButton() {
 
-    const [isLoggout, setIsLoggout] = useState(false);
+    const [isLogout, setIsLogout] = useState(false);
     const navigate = useNavigate();
 
     const handleLogin = () => {
-        setIsLoggout(true);
+        setIsLogout(true);
         navigate("/");
     };
 
-    if (isLoggout) {
+    if (isLogout) {
         return null;
       }
 
