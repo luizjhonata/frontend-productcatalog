@@ -1,8 +1,22 @@
-import React from 'react'
-import './styles.css'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import './styles.css';
 import logo from '../../assets/logo.svg';
 
 function LoginPage() {
+
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+
+    const handleLogin = () => {
+        setIsLoggedIn(true);
+        navigate("/main");
+    };
+
+    if (isLoggedIn) {
+        return null;
+      }
+
     return (
         <div className='logincontainer'>
             <div className='loginbox'>
@@ -32,7 +46,7 @@ function LoginPage() {
                         </div>
                     </div>
                     <div className='btn-container'>
-                        <button className="btn-entrar">
+                        <button className="btn-entrar" onClick={handleLogin}>
                             ENTRAR
                         </button>
                     </div>
