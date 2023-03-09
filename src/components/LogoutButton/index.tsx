@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from "../../contexts/AuthProvider/useAuth";
+import { useNavigate } from 'react-router-dom';
 import './styles.css';
 
 function LogoutButton() {
 
-    const [isLogout, setIsLogout] = useState(false);
+    const auth = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = () => {
-        setIsLogout(true);
-        navigate("/");
-    };
-
-    if (isLogout) {
-        return null;
-      }
+    function handleLogout() {
+        try {
+            auth.logout();
+            navigate("/login");
+        } catch (error) {
+            console.log('Erro no Logout');
+        }
+    }
 
     return (
-        <button className='logoutbutton' onClick={handleLogin}>Logout</button>
+        <button className='logoutbutton' onClick={handleLogout}>Logout</button>
     )
 }
 

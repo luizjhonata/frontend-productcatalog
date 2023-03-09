@@ -1,25 +1,31 @@
-import React, { useState, useContext } from 'react';
-import './styles.css';
+import { useState } from 'react';
+import { useAuth } from '../../contexts/AuthProvider/useAuth';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import './styles.css';
 
 function LoginPage() {
-
-    // const { authenticated, login } = useContext(AuthContext);
-
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const handleSubmit = (e) => {
+    const auth = useAuth();
+    const navigate = useNavigate();
+
+    const handleSubmit = (e: { preventDefault: () => void; }) => {
         e.preventDefault();
 
-        console.log('submit', { username, password });
-        login(username, password);
-        //integração com o meu contexto / api
+        onFinish({ username, password })
+        // console.log('submit', { username, password });
     };
 
-    // COISAS VELHAS ABAIXO
-
-
+    function onFinish(values: { username: string, password: string }) {
+        try {
+            auth.authenticate(values.username, values.password);
+            navigate("/");
+        } catch (error) {
+            console.log('Invalid email or password');
+        }
+    }
 
     return (
         <div className='logincontainer'>
@@ -39,8 +45,7 @@ function LoginPage() {
                     <div className='infosubtitle'>
                         <h2>Preencha os dados de login para acessar</h2>
                     </div>
-                    <form className='form'
-                        onSubmit={handleSubmit}>
+                    <form className='form' onSubmit={handleSubmit}>
                         <div className='field'>
                             <label htmlFor="username">Usuário</label>
                             <input type="username"
