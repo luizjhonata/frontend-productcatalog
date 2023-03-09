@@ -1,21 +1,25 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useState, useContext } from 'react';
 import './styles.css';
 import logo from '../../assets/logo.svg';
 
 function LoginPage() {
 
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const navigate = useNavigate();
+    // const { authenticated, login } = useContext(AuthContext);
 
-    const handleLogin = () => {
-        setIsLoggedIn(true);
-        navigate("/main");
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        console.log('submit', { username, password });
+        login(username, password);
+        //integração com o meu contexto / api
     };
 
-    if (isLoggedIn) {
-        return null;
-      }
+    // COISAS VELHAS ABAIXO
+
+
 
     return (
         <div className='logincontainer'>
@@ -35,21 +39,30 @@ function LoginPage() {
                     <div className='infosubtitle'>
                         <h2>Preencha os dados de login para acessar</h2>
                     </div>
-                    <div className='datacontainer'>
-                        <div className='userform'>
-                            <h2>Usuário</h2>
-                            <input type="text" placeholder="Digite o nome do usuário" />
+                    <form className='form'
+                        onSubmit={handleSubmit}>
+                        <div className='field'>
+                            <label htmlFor="username">Usuário</label>
+                            <input type="username"
+                                name='username'
+                                id="username"
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)} placeholder="Digite o nome do usuário" />
                         </div>
-                        <div className='passwordform'>
-                            <h2>Senha</h2>
-                            <input type="password" placeholder="Digite a senha" />
+                        <div className='field'>
+                            <label htmlFor="password">Senha</label>
+                            <input type="password"
+                                name='password'
+                                id="password"
+                                value={password}
+                                onChange={(e) => setPassword(e.target.value)} placeholder="Digite a senha" />
                         </div>
-                    </div>
-                    <div className='btn-container'>
-                        <button className="btn-entrar" onClick={handleLogin}>
-                            ENTRAR
-                        </button>
-                    </div>
+                        <div className='btn-container'>
+                            <button className="btn-entrar" type="submit">
+                                ENTRAR
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

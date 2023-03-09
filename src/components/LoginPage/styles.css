@@ -79,18 +79,14 @@
     }
 }
 
-.userform {
+.field {
     padding: 10px;
     margin: 10px;
     color: #000;
     border: 0 0 0 1;
+
 }
 
-.passwordform {
-    padding: 10px;
-    margin: 10px;
-    color: #000;
-}
 
 input {
     color: #000;
@@ -100,53 +96,35 @@ input {
     border-bottom: 1px solid #000;
 }
 
-.userform input {
+.field input {
     width: 280px;
     padding-bottom: 2px;
     font-size: 11px;
-    padding: 5px;
+    padding: 14px;
 }
 
 @media (min-width: 576px) {
-    .userform input {
+    .field input {
         width: 320px;
         font-size: 13px;
     }
 }
 
-.userform h2 {
+.field label {
     font-weight: 700;
     font-size: 13px;
 }
 
 @media (min-width: 576px) {
-    .userform h2 {
+    .field label {
         font-size: 16px;
     }
 }
 
-.passwordform input {
-    width: 280px;
-    padding-bottom: 2px;
-    font-size: 11px;
-    padding: 5px;
-}
-
 @media (min-width: 576px) {
-    .passwordform input {
+    .field input {
         width: 320px;
         font-size: 13px;
-    }
-}
-
-.passwordform h2 {
-    font-weight: 700;
-    font-size: 13px;
-}
-
-@media (min-width: 576px) {
-    .passwordform h2 {
-        font-size: 16px;
     }
 }
 
