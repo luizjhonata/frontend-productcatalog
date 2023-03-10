@@ -15,13 +15,14 @@ function LoginPage() {
         e.preventDefault();
 
         onFinish({ username, password })
-        // console.log('submit', { username, password });
     };
 
-    function onFinish(values: { username: string, password: string }) {
+    async function onFinish(values: { username: string, password: string }) {
         try {
-            auth.authenticate(values.username, values.password);
-            navigate("/");
+            await auth.authenticate(values.username, values.password);
+            if (auth.authenticate != null) {
+                navigate("/");
+            }
         } catch (error) {
             console.log('Invalid email or password');
         }
