@@ -1,8 +1,7 @@
 import {
     BrowserRouter as Router,
     Route,
-    Routes,
-    Navigate
+    Routes
 } from 'react-router-dom';
 import { ProtectedLayout } from './components/ProtectedLayout';
 import { AuthProvider } from "./contexts/AuthProvider";

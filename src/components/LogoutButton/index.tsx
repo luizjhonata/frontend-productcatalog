@@ -7,6 +7,8 @@ function LogoutButton() {
     const auth = useAuth();
     const navigate = useNavigate();
 
+    const userLogged = auth.username;
+
     function handleLogout() {
         try {
             auth.logout();
@@ -17,7 +19,10 @@ function LogoutButton() {
     }
 
     return (
-        <button className='logoutbutton' onClick={handleLogout}>Logout</button>
+        <div>
+            <p className="username">{userLogged}</p>
+            <button className='logoutbutton' onClick={handleLogout}>Logout</button>
+        </div>
     )
 }
 

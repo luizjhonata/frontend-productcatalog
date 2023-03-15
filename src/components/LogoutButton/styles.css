@@ -19,3 +19,23 @@
     box-shadow: 0 0 0 0 #11467c, inset 1px 1px 0 1px #11467c;
     transform: translate(1px, 1px);
 }
+
+.username {
+    position: absolute;
+    right: 8em;
+    top: 1em;
+    color: #000000;
+    display: block;
+    width: 60px;
+    height: 25px;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+@media (max-width: 576px) {
+    .username {
+        font-size: 13px;
+        right: 2.2em;
+        top: 3.5em;
+    }
+}
