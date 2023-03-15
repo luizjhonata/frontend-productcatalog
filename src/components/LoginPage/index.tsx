@@ -3,6 +3,7 @@ import { useAuth } from '../../contexts/AuthProvider/useAuth';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
 import './styles.css';
+import { toast } from 'react-toastify';
 
 function LoginPage() {
     const [username, setUsername] = useState("");
@@ -24,7 +25,17 @@ function LoginPage() {
                 navigate("/");
             }
         } catch (error) {
-            console.log('Invalid email or password');
+            toast.warning('Invalid username or password',
+                {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
         }
     }
 
