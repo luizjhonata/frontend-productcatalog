@@ -17,3 +17,12 @@ export interface IContext extends IUser {
 export interface IAuthProvider {
     children: JSX.Element;
 }
+
+export interface Products {
+    id: number;
+    cod: string;
+    description: string;
+    price: number;
+    weight: number;
+    details: string;
+}

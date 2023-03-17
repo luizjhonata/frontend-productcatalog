@@ -1,13 +1,32 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import './styles.css';
 import search from '../../assets/search.svg';
 import DetailModal from '../DetailModal';
 import EditProductModal from '../EditProductModal';
+import axios from 'axios';
+import { useAuth } from '../../contexts/AuthProvider/useAuth';
+import { Products } from '../../contexts/AuthProvider/types';
 
 function ProductPage() {
+
+    const auth = useAuth();
+
+    const token = auth.token;
+
+    const [products, setProducts] = useState<Products[]>([]);
+
+    useEffect(() => {
+        axios.get("http://localhost:8080/products/", {
+            headers: {
+                Authorization: `Bearer ${token}`,
+            },
+        }).then(response => {
+            setProducts(response.data)
+        })
+
+    }, []);
     return (
         <div className='product-card'>
-            {/* <h2 className='product-title'>PRODUTOS</h2> */}
             <div className='product-search-container'>
                 <input type="text" placeholder="Digite o código do produto" />
                 <button className='search-button'>
@@ -29,64 +48,23 @@ function ProductPage() {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td className='show510'>1</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
-                        <tr>
-                            <td className='show510'>2</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
-                        <tr>
-                            <td className='show510'>3</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
-                        <tr>
-                            <td className='show510'>4</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
-                        <tr>
-                            <td className='show510'>5</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
-                        <tr>
-                            <td className='show510'>6</td>
-                            <td className='show510'>C11JGSDN80</td>
-                            <td>CURVA 11º BOLSA DN80</td>
-                            <td className='show850'>16</td>
-                            <td>R$ 200.02</td>
-                            <td><DetailModal /></td>
-                            <td><EditProductModal /></td>
-                        </tr>
+                        {products.map(product => (
+
+                            <tr key={product.id}>
+                                <td className='show510'>{product.id}</td>
+                                <td className='show510'>{product.cod}</td>
+                                <td>{product.description}</td>
+                                <td className='show850'>{product.weight}</td>
+                                <td>{product.price}</td>
+                                <td><DetailModal /></td>
+                                <td><EditProductModal /></td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
-        </div>)
+        </div>
+    )
 }
 
 export default ProductPage
