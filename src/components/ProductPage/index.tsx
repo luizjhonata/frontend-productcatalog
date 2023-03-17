@@ -16,7 +16,7 @@ function ProductPage() {
     const [products, setProducts] = useState<Products[]>([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080/products/", {
+        axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
