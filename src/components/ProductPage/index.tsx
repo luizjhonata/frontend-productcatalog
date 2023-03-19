@@ -7,6 +7,7 @@ import axios from 'axios';
 import { useAuth } from '../../contexts/AuthProvider/useAuth';
 import { Products } from '../../contexts/AuthProvider/types';
 import { toast } from 'react-toastify';
+import { urlApi } from '../../services/api';
 
 function ProductPage() {
 
@@ -25,7 +26,7 @@ function ProductPage() {
 
     async function onSearch(values: { loadProducts: string; }) {
         if (values.loadProducts) {
-            await axios.get(`https://productcatalog-product-catalog.up.railway.app/products/cod/${values.loadProducts}`, {
+            await axios.get(`${urlApi}/products/cod/${values.loadProducts}`, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -67,7 +68,7 @@ function ProductPage() {
 
     useEffect(() => {
         const productsToload = loadProducts;
-            axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
+        axios.get(`${urlApi}/products/`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

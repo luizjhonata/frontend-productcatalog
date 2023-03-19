@@ -1,9 +1,11 @@
 import axios from "axios";
 import { getUserLocalStorage } from "../contexts/AuthProvider/util";
 
+// export const urlApi = `http://localhost:8080`;
+export const urlApi = `https://productcatalog-product-catalog.up.railway.app`;
+
 export const Api = axios.create({
-    // baseURL: "http://localhost:8080", // use that in local tests
-    baseURL: "https://productcatalog-product-catalog.up.railway.app",
+    baseURL: `${urlApi}`,
 });
 
 Api.interceptors.request.use(

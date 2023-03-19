@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { IUser } from '../../contexts/AuthProvider/types';
 import { useAuth } from '../../contexts/AuthProvider/useAuth';
+import { urlApi } from '../../services/api';
 import EditUserModal from '../EditUserModal';
 import './styles.css';
 
@@ -14,8 +15,7 @@ function UserPage() {
     const [users, setUser] = useState<IUser[]>([]);
 
     useEffect(() => {
-        axios.get("https://productcatalog-product-catalog.up.railway.app/users/", {
-            // axios.get("http://localhost:8080/users/", {
+            axios.get(`${urlApi}/users/`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
