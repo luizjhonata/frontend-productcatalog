@@ -73,7 +73,7 @@ function ProductPage() {
                 Authorization: `Bearer ${token}`,
             },
         }).then(response => {
-            setProducts(response.data)
+            setProducts(response.data);
         })
 
     }, []);
@@ -111,9 +111,9 @@ function ProductPage() {
                                 <td className='show590'>{product.id}</td>
                                 <td className='show590'>{product.cod}</td>
                                 <td>{product.description}</td>
-                                <td className='show860'>{product.weight}</td>
-                                <td>R$ {product.price}</td>
-                                <td><DetailModal /></td>
+                                <td className='show860'>{product.weight.toFixed(1)}</td>
+                                <td>R$ {product.price.toFixed(2)}</td>
+                                <td><DetailModal detailImg={product.details} /></td>
                                 <td><EditProductModal /></td>
                             </tr>
                         ))}

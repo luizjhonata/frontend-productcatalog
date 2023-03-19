@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 import details from '../../assets/details.svg';
 import Modal from 'react-modal';
-import './styles.css'
-import modalImg from '../../assets/curva11.png';
+import './styles.css';
+
+interface DetailModalProps {
+    detailImg: string;
+}
 
 const customStyles = {
     content: {
@@ -13,9 +16,10 @@ const customStyles = {
     },
 };
 
+
 Modal.setAppElement('#root')
 
-function DetailModal() {
+function DetailModal({detailImg} : DetailModalProps) {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -33,11 +37,15 @@ function DetailModal() {
             <Modal
                 isOpen={modalIsOpen}
                 onRequestClose={closeModal}
-            style={customStyles}
+                style={customStyles}
             >
                 <div className='container-modal'>
                     <button className='close-button' onClick={closeModal}>X</button>
-                    <img className='img-detail' src={modalImg} alt="Detalhamento Produto" />
+                    <img
+                        className='img-detail'
+                        src={detailImg}
+                        alt="Detalhamento Produto"
+                    />
                 </div>
 
             </Modal>
