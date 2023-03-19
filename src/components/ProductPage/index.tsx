@@ -66,11 +66,8 @@ function ProductPage() {
     }
 
     useEffect(() => {
-        // axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
-
         const productsToload = loadProducts;
-
-        axios.get(`http://localhost:8080/products/${productsToload}`, {
+            axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
