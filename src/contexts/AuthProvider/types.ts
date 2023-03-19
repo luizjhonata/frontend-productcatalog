@@ -1,8 +1,11 @@
 // IUser REPRESENTA O USUÁRIO QUE VAI SER SALVO NO CONTEXTO - ? SERVE PQ ELE NÃO É OBRIGATÓRIO NO PRIMEIRO ACESSO
 
 export interface IUser {
+    id?: number;
     username?: string;
     token?: string;
+    name?: string;
+    roles: string;
 }
 
 // IContext EXTEND O IUser e tem outras FUNÇÕES.
