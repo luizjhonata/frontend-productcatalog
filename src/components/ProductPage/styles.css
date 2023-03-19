@@ -54,7 +54,7 @@ h1 {
     display: none;
 }
 
-.product-search-container {
+.product-search-container .form{
     display: flex;
     align-items: center;
     justify-content: flex-start;

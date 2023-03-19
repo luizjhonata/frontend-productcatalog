@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react';
 import './styles.css';
-import search from '../../assets/search.svg';
+import searchIco from '../../assets/search.svg';
 import DetailModal from '../DetailModal';
 import EditProductModal from '../EditProductModal';
 import axios from 'axios';
 import { useAuth } from '../../contexts/AuthProvider/useAuth';
 import { Products } from '../../contexts/AuthProvider/types';
+import { toast } from 'react-toastify';
 
 function ProductPage() {
 
@@ -15,9 +16,61 @@ function ProductPage() {
 
     const [products, setProducts] = useState<Products[]>([]);
 
+    const [loadProducts, setLoadProducts] = useState("");
+
+    const handleSearch = (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+        onSearch({ loadProducts })
+    }
+
+    async function onSearch(values: { loadProducts: string; }) {
+        if (values.loadProducts) {
+            await axios.get(`https://productcatalog-product-catalog.up.railway.app/products/cod/${values.loadProducts}`, {
+                headers: {
+                    Authorization: `Bearer ${token}`,
+                },
+            }).then(response => {
+                const result = response.data;
+                if (Object.keys(result)[0] == undefined) {
+                    toast.warning('Product not finded',
+                        {
+                            position: "top-center",
+                            autoClose: 2500,
+                            hideProgressBar: false,
+                            closeOnClick: true,
+                            pauseOnHover: true,
+                            draggable: true,
+                            progress: undefined,
+                            theme: "colored",
+                        });
+                }
+                else {
+                    setProducts(response.data)
+                }
+            });
+
+        }
+        else {
+            toast.warning('Type a valid code',
+                {
+                    position: "top-center",
+                    autoClose: 2500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                });
+        }
+    }
+
     useEffect(() => {
-        axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
-            // axios.get("http://localhost:8080/products/", {        
+        // axios.get("https://productcatalog-product-catalog.up.railway.app/products/", {
+
+        const productsToload = loadProducts;
+
+        axios.get(`http://localhost:8080/products/${productsToload}`, {
             headers: {
                 Authorization: `Bearer ${token}`,
             },
@@ -29,11 +82,17 @@ function ProductPage() {
     return (
         <div className='product-card'>
             <div className='product-search-container'>
-                <input type="text" placeholder="Digite o código do produto" />
-                <button className='search-button'>
-                    <img src={search} alt="" />
-                </button>
-
+                <form className='form' onSubmit={handleSearch}>
+                    <input
+                        type="text"
+                        placeholder="Digite o código do produto"
+                        value={loadProducts}
+                        onChange={(e) => setLoadProducts(e.target.value)}
+                    />
+                    <button className='search-button' type="submit">
+                        <img src={searchIco} alt="" />
+                    </button>
+                </form>
             </div>
             <div>
                 <table className='product-table'>
@@ -50,7 +109,6 @@ function ProductPage() {
                     </thead>
                     <tbody>
                         {products.map(product => (
-
                             <tr key={product.id}>
                                 <td className='show590'>{product.id}</td>
                                 <td className='show590'>{product.cod}</td>
