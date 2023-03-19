@@ -15,6 +15,7 @@ function UserPage() {
 
     useEffect(() => {
         axios.get("https://productcatalog-product-catalog.up.railway.app/users/", {
+            // axios.get("http://localhost:8080/users/", {
             headers: {
                 Authorization: `Bearer ${token}`,
             },

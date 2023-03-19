@@ -5,7 +5,7 @@ export interface IUser {
     username?: string;
     token?: string;
     name?: string;
-    roles: string;
+    roles?: string;
 }
 
 // IContext EXTEND O IUser e tem outras FUNÇÕES.
