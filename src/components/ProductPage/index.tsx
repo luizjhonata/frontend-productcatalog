@@ -113,8 +113,15 @@ function ProductPage() {
                                 <td>{product.description}</td>
                                 <td className='show860'>{product.weight.toFixed(1)}</td>
                                 <td>R$ {product.price.toFixed(2)}</td>
-                                <td><DetailModal detailImg={product.details} /></td>
-                                <td><EditProductModal /></td>
+                                <td><DetailModal
+                                    detailImg={product.details} />
+                                </td>
+                                <td><EditProductModal
+                                    productCod={product.cod}
+                                    productDescription={product.description}
+                                    productPrice={product.price}
+                                    productWeight={product.weight} />
+                                </td>
                             </tr>
                         ))}
                     </tbody>

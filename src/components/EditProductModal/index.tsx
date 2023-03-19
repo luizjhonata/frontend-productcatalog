@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import edit from '../../assets/edit.svg';
 import Modal from 'react-modal';
 import './styles.css';
+
+interface EditProductModalProps {
+    productCod: string;
+    productDescription: string;
+    productWeight: number;
+    productPrice: number;
+}
 
 const customStyles = {
     content: {
@@ -14,9 +21,14 @@ const customStyles = {
 
 Modal.setAppElement('#root')
 
-function EditProductModal() {
+function EditProductModal({productCod, productDescription, productWeight, productPrice} : EditProductModalProps) {
 
     const [modalIsOpen, setIsOpen] = React.useState(false);
+
+    const [cod, setCod] = useState<string>(productCod);
+    const [description, setDescription] = useState<string>(productDescription);
+    const [weight, setWeight] = useState<number>(productWeight);
+    const [price, setPrice] = useState<number>(productPrice);
 
     function openModal() {
         setIsOpen(true);
@@ -41,19 +53,19 @@ function EditProductModal() {
                         </div>
                         <div className='field-modal'>
                             <h2>COD:</h2>
-                            <input type="text" value="C11JGSDN80" />
+                            <input type="text" value={cod} onChange={(event) => setCod(event.target.value)} />
                         </div>
                         <div className='field-modal'>
                             <h2>DESCRIPTION: </h2>
-                            <input type="text" placeholder='CURVA 11º BOLSA DN80' />
+                            <input type="text" value={description} onChange={(event) => setDescription(event.target.value)} />
                         </div>
                         <div className='field-modal'>
                             <h2>WEIGHT:</h2>
-                            <input type="text" placeholder='23' />
+                            <input type="number" value={weight} onChange={(event) => setWeight(parseFloat(event.target.value))} />
                         </div>
                         <div className='field-modal'>
                             <h2>PRICE:</h2>
-                            <input type="text" placeholder='200' />
+                            <input type="number" value={price} onChange={(event) => setPrice(parseFloat(event.target.value))} />
                         </div>
                         <div className='container-save-button'>
                             <button className='save-button'> Salvar Alterações </button>
