@@ -38,10 +38,10 @@ function ProductPage() {
                 <table className='product-table'>
                     <thead>
                         <tr>
-                            <th className='show510'>ID</th>
-                            <th className='show510'>COD</th>
+                            <th className='show590'>ID</th>
+                            <th className='show590'>COD</th>
                             <th>DESCRIÇÃO</th>
-                            <th className='show850'>PESO</th>
+                            <th className='show860'>PESO (KG)</th>
                             <th>PREÇO</th>
                             <th>DETALHES</th>
                             <th>EDITAR</th>
@@ -51,11 +51,11 @@ function ProductPage() {
                         {products.map(product => (
 
                             <tr key={product.id}>
-                                <td className='show510'>{product.id}</td>
-                                <td className='show510'>{product.cod}</td>
+                                <td className='show590'>{product.id}</td>
+                                <td className='show590'>{product.cod}</td>
                                 <td>{product.description}</td>
-                                <td className='show850'>{product.weight}</td>
-                                <td>{product.price}</td>
+                                <td className='show860'>{product.weight}</td>
+                                <td>R$ {product.price}</td>
                                 <td><DetailModal /></td>
                                 <td><EditProductModal /></td>
                             </tr>
